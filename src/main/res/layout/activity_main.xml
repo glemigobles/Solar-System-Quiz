@@ -62,7 +62,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@color/colorPrimaryGrey"
+        android:background="#000"
         android:orientation="vertical">
 
         <Button
@@ -74,8 +74,8 @@
             android:layout_gravity="center|top"
             android:gravity="center"
             android:shadowColor="@color/colorAccentLight"
-            android:textColor="@color/colorAccent"
-            android:background="@color/colorPrimaryViol"
+            android:textColor="@color/colorAccentLight"
+            android:background="#1D961D"
             android:layout_marginTop="5dp"
 
             />

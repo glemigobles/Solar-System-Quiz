@@ -78,6 +78,13 @@ public class VariableContainer  {
     public void setQuestionChecked(boolean questionChecked) {
         this.questionChecked = questionChecked;
     }
+    public int setScorePercent (){
+        if(Main.questions.size()!=0){
+            double score=((double) points/(double)Main.questions.size() )*100;
+            return (int) score;
+        }
+        else{return 0;}
+    }
 
 
 

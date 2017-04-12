@@ -36,6 +36,24 @@ public class Score extends Fragment {
         TextView score=(TextView) view.findViewById(R.id.score);
         score.setText(""+Main.variables.points);
 
+        TextView scorePercent=(TextView) view.findViewById(R.id.scorePercent);
+        scorePercent.setText(Main.variables.setScorePercent()+" %");
+
+        TextView congrats=(TextView) view.findViewById(R.id.congrats);
+
+        if(Main.variables.setScorePercent()>50){
+            congrats.setText("Congratulation! your score is :");
+            if(Main.variables.setScorePercent()==100) {
+                congrats.setText("Perfect!!! your score is :");
+            }
+        }
+
+        else{
+            congrats.setText("It Could  be better! your score is :");
+        }
+
+
+
         return view;
     }
 
