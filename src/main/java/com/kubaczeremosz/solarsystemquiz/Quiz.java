@@ -1,6 +1,7 @@
 package com.kubaczeremosz.solarsystemquiz;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
@@ -97,6 +98,7 @@ implements
                     //Thats what happening after answering last question
                     else{
                         nextRound.setText("End Quiz");
+                        nextRound.setBackgroundColor(Color.parseColor("#BB2424"));
 
                         questionText.setTextSize(28);
                         questionText.setText(Main.variables.playerName+"!");
@@ -110,19 +112,20 @@ implements
                         nextRound.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
+                                //clearing lists
+                                for(int i=0; i<Main.globalAnswerList.size();i++){
+                                    Main.globalAnswerList.get(i).PlayerAnswer1=null;
+                                    Main.globalAnswerList.get(i).PlayerAnswer2=null;
+                                    Main.globalAnswerList.get(i).PlayerAnswer3=null;
+                                }
+                                Main.globalAnswerList.clear();
+                                Main.questions.clear();
+                                //quit to main
                                 Intent intent=new Intent(Quiz.this, Main.class);
                                 startActivity(intent);
                             }
                         });
 
-                        //clearing lists
-                        for(int i=0; i<Main.globalAnswerList.size();i++){
-                            Main.globalAnswerList.get(i).PlayerAnswer1=null;
-                            Main.globalAnswerList.get(i).PlayerAnswer2=null;
-                            Main.globalAnswerList.get(i).PlayerAnswer3=null;
-                        }
-                        Main.globalAnswerList.clear();
-                        Main.questions.clear();
 
 
                     }
